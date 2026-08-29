@@ -83,8 +83,8 @@ class Tokenizer(object):
         Args:
             word_counts (dict): Token frequency counts.
         """
-        # Sort by frequency descending to filter max_features and min_freq
-        word_counts = sorted(word_counts.items(), key=lambda x: -x[1])
+        # Sort by frequency descending to guarantee deterministic index order
+        word_counts = sorted(word_counts.items(), key=lambda x: (-x[1], x[0]))
         if self._max_features:  # keep the most frequent features
             word_counts = word_counts[0:self._max_features]
         words = []
@@ -94,8 +94,8 @@ class Tokenizer(object):
                     words.append(token.lower() if self._lower else token)
             else:
                 break # already sorted in decending order
-        # Sort by key ascending to guarantee deterministic index order
-        words = sorted(words)
+        if not isinstance(words[0], str): # Sort by key ascending for integer keys
+            words = sorted(words)
         if self.remap:
             self.vocab = dict((token, idx) for idx, token in enumerate(words, 1))
         else:

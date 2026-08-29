@@ -4,6 +4,16 @@
 [Doing] Add support for saving pb file, exporting embeddings
 [Doing] Add support of multi-gpu training
 
+**FuxiCTR v2.3.10, 2025-09-06**
++ [FEA] Replace customized parquet dataloaders with Ray Data for parquet dataloader and transform
++ [FEA] Refactor RankDataLoader to factory function with per-epoch shuffle support
++ [FEA] Refactor fit statistics collection to polars streaming
++ [FEA] Add QNN model ([#151](https://github.com/reczoo/FuxiCTR/pull/151))
++ [FEA] Remove keras_preprocessing dependency, inline pad_sequences
++ [FIX] Fix #164: meta tokenization in block dataset building
++ [FIX] Normalize line endings to LF globally via .gitattributes (Close #173)
++ [DOC] Fix #57: Add class and method docstring
+
 **FuxiCTR v2.3.9, 2025-06-17**
 + [FIX] Fixing preprocessing issues in v2.3.8.
 

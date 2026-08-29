@@ -3,9 +3,9 @@
 </div>
 
 <div align="center">
-<a href="https://pypi.org/project/fuxictr"><img src="https://img.shields.io/badge/python-3.9+-blue" style="max-width: 100%;" alt="Python version"></a>
-<a href="https://pypi.org/project/fuxictr"><img src="https://img.shields.io/badge/pytorch-1.10+-blue" style="max-width: 100%;" alt="Pytorch version"></a>
-<a href="https://pypi.org/project/fuxictr"><img src="https://img.shields.io/badge/tensorflow-2.1+-blue" style="max-width: 100%;" alt="Pytorch version"></a>
+<a href="https://pypi.org/project/fuxictr"><img src="https://img.shields.io/badge/python-3.10+-blue" style="max-width: 100%;" alt="Python version"></a>
+<a href="https://pypi.org/project/fuxictr"><img src="https://img.shields.io/badge/torch-2.5+-blue" style="max-width: 100%;" alt="Pytorch version"></a>
+<a href="https://pypi.org/project/fuxictr"><img src="https://img.shields.io/badge/tensorflow-2.21+-blue" style="max-width: 100%;" alt="Pytorch version"></a>
 <a href="https://pypi.org/project/fuxictr"><img src="https://img.shields.io/pypi/v/fuxictr.svg" style="max-width: 100%;" alt="Pypi version"></a>
 <a href="https://pepy.tech/project/fuxictr"><img src="https://static.pepy.tech/badge/fuxictr" style="max-width: 100%;" alt="Downloads"></a>
 <a href="https://github.com/reczoo/FuxiCTR/blob/main/LICENSE"><img src="https://img.shields.io/github/license/reczoo/fuxictr.svg" style="max-width: 100%;" alt="License"></a>
@@ -98,10 +98,10 @@ Click-through rate (CTR) prediction is a critical task for various industrial ap
 
 ## Benchmarking
 
-We have benchmarked FuxiCTR models on a set of open datasets as follows:
+We have benchmarked FuxiCTR models on a set of recommendation datasets as follows:
 
-+ :star: [Benchmark datasets for CTR prediction](https://github.com/reczoo/Datasets?tab=readme-ov-file#ctr-prediction)
-+ :star: [Benchmark settings and running steps](https://github.com/reczoo/BARS/tree/main/ranking/ctr)
++ :star: [Benchmark datasets for CTR prediction](https://github.com/reczoo/RecData?tab=readme-ov-file#ctr-prediction)
++ :star: [Benchmark settings and running steps](https://github.com/reczoo/RecBench/tree/main/ranking/ctr)
 + :star: [Benchmark leaderboard for CTR prediction](https://openbenchmark.github.io/BARS/CTR/leaderboard)
 
 ## Dependencies
@@ -109,7 +109,7 @@ We have benchmarked FuxiCTR models on a set of open datasets as follows:
 The following dependencies are recommended:
 
 + python>=3.10
-+ pytorch>=2.7.1 (if using for torch models)
++ pytorch>=2.5.1 (if using for torch models)
 + tensorflow>=2.21.0 (if using for tensorflow models)
 
 Please install other required packages via `pip install -r requirements.txt`.
@@ -162,7 +162,7 @@ Please install other required packages via `pip install -r requirements.txt`.
 If you use our code or benchmarks in your public research, please cite the following two papers.
 
 + Jieming Zhu, Quanyu Dai, Liangcai Su, Rong Ma, Jinyang Liu, Guohao Cai, Xi Xiao, Rui Zhang. [BARS: Towards Open Benchmarking for Recommender Systems](https://arxiv.org/abs/2205.09626). *The 45th International ACM SIGIR Conference on Research and Development in Information Retrieval (SIGIR)*, 2022. [[Bibtex](https://dblp.org/rec/conf/sigir/ZhuDSMLCXZ22.html?view=bibtex)]
-+ Jieming Zhu, Jinyang Liu, Shuai Yang, Qi Zhang, Xiuqiang He. [BARS-CTR: Open Benchmarking for Click-Through Rate Prediction](https://arxiv.org/abs/2009.05794). *The 30th ACM International Conference on Information and Knowledge Management (CIKM)*, 2021. [[Bibtex](https://dblp.org/rec/conf/cikm/ZhuLYZH21.html?view=bibtex)]
++ Jieming Zhu, Jinyang Liu, Shuai Yang, Qi Zhang, Xiuqiang He. [Open Benchmarking for Click-Through Rate Prediction](https://arxiv.org/abs/2009.05794). *The 30th ACM International Conference on Information and Knowledge Management (CIKM)*, 2021. [[Bibtex](https://dblp.org/rec/conf/cikm/ZhuLYZH21.html?view=bibtex)]
 
 ## 🙋 Contributing
 

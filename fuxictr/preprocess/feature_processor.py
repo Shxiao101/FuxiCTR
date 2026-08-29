@@ -581,27 +581,28 @@ class FeatureProcessor(object):
             if feature_type == "meta":
                 tokenizer = self.processor_dict.get(feature + "::tokenizer")
                 if tokenizer is not None:
-                    batch[feature] = np.array(
-                        tokenizer.encode_category(col_series), dtype=np.int64)
+                    col_series = tokenizer.encode_category(col_series)
+                batch[feature] = np.array(col_series, dtype=np.int64)
             elif feature_type == "numeric":
                 normalizer = self.processor_dict.get(feature + "::normalizer")
                 if normalizer is not None:
-                    batch[feature] = np.array(
-                        normalizer.transform(np.array(col_series)), dtype=np.float64)
+                    batch[feature] = normalizer.transform(np.array(col_series))
             elif feature_type == "categorical":
                 category_processor = feature_spec.get("category_processor")
                 if category_processor is None:
-                    batch[feature] = np.array(
+                    batch[feature] = (
                         self.processor_dict.get(feature + "::tokenizer")
-                        .encode_category(col_series), dtype=np.int64)
+                        .encode_category(col_series)
+                    )
                 elif category_processor == "numeric_bucket":
                     raise NotImplementedError
                 elif category_processor == "hash_bucket":
                     raise NotImplementedError
             elif feature_type == "sequence":
-                batch[feature] = np.array(
+                batch[feature] = (
                     self.processor_dict.get(feature + "::tokenizer")
-                    .encode_sequence(col_series), dtype=np.int64)
+                    .encode_sequence(col_series)
+                )
             elif feature_type == "embedding":
                 continue
             else:

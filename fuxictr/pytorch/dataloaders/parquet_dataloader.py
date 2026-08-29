@@ -107,7 +107,7 @@ class ParquetDataLoader(object):
                 kwargs["local_shuffle_buffer_size"] = self.buffer_size
             else:
                 # Global shuffle
-                dataset = self.dataset.random_shuffle()
+                dataset = self.dataset.materialize().random_shuffle()
         else:
             dataset = self.dataset
         return iter(dataset.iter_torch_batches(**kwargs))
